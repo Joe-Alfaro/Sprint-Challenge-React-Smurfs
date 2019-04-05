@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 
+import {StyledSmurfForm, StyledButton} from '../AppStyles.js';
+
 class SmurfForm extends Component {
   constructor(props) {
     super(props);
@@ -10,10 +12,9 @@ class SmurfForm extends Component {
     };
   }
 
-  addSmurf = event => {
+  submitHandler = event => {
     event.preventDefault();
-    // add code to create the smurf using the api
-
+    this.props.addSmurf(this.state)
     this.setState({
       name: '',
       age: '',
@@ -27,31 +28,38 @@ class SmurfForm extends Component {
 
   render() {
     return (
-      <div className="SmurfForm">
-        <form onSubmit={this.addSmurf}>
+      <StyledSmurfForm onSubmit={this.submitHandler}>
+        <div>
+          <p>Name:</p><br/>
           <input
+            type="text"
             onChange={this.handleInputChange}
-            placeholder="name"
             value={this.state.name}
             name="name"
-          />
+          /><br/>
+        </div>
+        <div>
+          <p>Age:</p><br/>
           <input
+            type="number"
             onChange={this.handleInputChange}
-            placeholder="age"
             value={this.state.age}
             name="age"
-          />
+          /><br/>
+        </div>
+        <div>
+          <p>Height:</p><br/>
           <input
+            type="text"
             onChange={this.handleInputChange}
-            placeholder="height"
             value={this.state.height}
             name="height"
-          />
-          <button type="submit">Add to the village</button>
-        </form>
-      </div>
+          /><br/>
+        </div>
+        <StyledButton type="submit">Add to the village</StyledButton>
+      </StyledSmurfForm>
     );
-  }
+   }
 }
 
 export default SmurfForm;
