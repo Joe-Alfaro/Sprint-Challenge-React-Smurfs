@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-
+import {Route} from 'react-router-dom';
 import axios from 'axios';
+
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 
@@ -30,6 +31,8 @@ class App extends Component {
         this.setState({
           smurfs: response.data
         })
+
+        this.props.history.push('/')
       })
       .catch(error=> console.log(error))
   }
@@ -37,8 +40,23 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <SmurfForm addSmurf={this.addSmurf} />
-        <Smurfs smurfs={this.state.smurfs} />
+        <Route
+          exact
+          path='/'
+          render={() => (
+            <Smurfs
+              smurfs={this.state.smurfs}
+            />)
+          }
+        />
+        <Route
+          path='/add-smurf'
+          render={() => (
+            <SmurfForm 
+              addSmurf={this.addSmurf} 
+            />)
+          }
+        />
       </div>
     );
   }
