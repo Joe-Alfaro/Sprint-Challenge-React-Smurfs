@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import {Route} from 'react-router-dom';
+import {Route, NavLink} from 'react-router-dom';
 import axios from 'axios';
 
 import SmurfForm from './components/SmurfForm';
 import Smurfs from './components/Smurfs';
 
-import './App.css';
+import {NavBar} from './AppStyles.js';
 
 class App extends Component {
   constructor(props) {
@@ -36,10 +36,18 @@ class App extends Component {
       })
       .catch(error=> console.log(error))
   }
-
+  
+ 
   render() {
     return (
-      <div className="App">
+      <div>
+        <NavBar>
+          <h1>Smurfs</h1>
+          <nav>
+            <NavLink exact to='/'>Home</NavLink>
+            <NavLink to='/add-smurf'>Add Smurf</NavLink>
+         </nav>
+        </NavBar>
         <Route
           exact
           path='/'

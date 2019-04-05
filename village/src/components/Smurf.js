@@ -1,12 +1,14 @@
 import React from 'react';
 
+import {SmurfCard} from '../AppStyles.js';
+
 const Smurf = props => {
   return (
-    <div className="Smurf">
+    <SmurfCard>
       <h3>{props.name}</h3>
-      <strong>{props.height} tall</strong>
+      <p>{props.height} tall</p>
       <p>{props.age} smurf years old</p>
-    </div>
+    </SmurfCard>
   );
 };
 

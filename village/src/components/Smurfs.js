@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import {Link} from 'react-router-dom';
 
 import Smurf from './Smurf';
+
+import {SmurfList} from '../AppStyles.js';
 
 class Smurfs extends Component {
   render() {
     return (
-      <div className="Smurfs">
+      <SmurfList>
         <h1>Smurf Village</h1>
         <ul>
           {this.props.smurfs.map(smurf => {
@@ -21,8 +22,7 @@ class Smurfs extends Component {
             );
           })}
         </ul>
-        <Link to='/add-smurf'>Add New Smurf</Link>
-      </div>
+      </SmurfList>
     );
   }
 }
