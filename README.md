@@ -18,7 +18,7 @@ Commit your code regularly and meaningfully. This helps both you (in case you ev
 
 ## Description
 
-In this challenge, you will create a Single Page Application complete with Client-Side Routing and components that are built to consume a locally hosted Web Server (API). Your application will be built to consume live data that will be served up by your Node/Express web server. You will design, architect, and develop a Smurf Village from scratch. Your creative abilities
+In this challenge, you will create a Single Page Application complete with Client-Side Routing and components that are built to consume a locally hosted Web Server (API). Your application will be built to consume live data that will be served up by your Node/Express web server. You will design, architect, and develop a Smurf Village from scratch. Your creative abilities rival those of Steve Jobs or Elon Musk.
 
 **Note** Utilize the following to help design the Data for your Application:
 
@@ -29,9 +29,16 @@ In this challenge, you will create a Single Page Application complete with Clien
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Explain the differences between `client-side routing` and `server-side routing`.
-- [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
-- [ ] Mention three tools we can use to make AJAX requests.
+Server side routing renders the entire page every time. Client side routing only renders updated components. Server side is faster on intial render and client side is faster on update renders.
 
+- [ ] Which HTTP methods can be mapped to the CRUD acronym that we use when interfacing with APIs/Servers.
+Create - post request
+Read - get request
+Update - put request
+Delete - delete request
+
+- [ ] Mention three tools we can use to make AJAX requests.
+.fetch(), axios, JQuery
 
 ## Project Set Up
 
