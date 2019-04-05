@@ -37,6 +37,21 @@ class App extends Component {
       .catch(error=> console.log(error))
   }
   
+  deleteSmurf = id => {
+    axios.delete('http://localhost:3333/smurfs/${id}')
+      .then(() => {
+        let smurfList = this.state.smurfs
+        let index = 0;
+        let found = false;
+        while(found === false){
+          if(smurfList[index].id===id){
+            smurfList.splice(index, 1);
+            found = true;
+          }
+        }
+        this.setState({smurfs: smurfList})
+      })
+  }
  
   render() {
     return (
@@ -53,6 +68,7 @@ class App extends Component {
           path='/'
           render={() => (
             <Smurfs
+              deleteSmurf={this.deleteSmurf}
               smurfs={this.state.smurfs}
             />)
           }

@@ -50,7 +50,7 @@ class SmurfForm extends Component {
         <div>
           <p>Height:</p><br/>
           <input
-            type="number"
+            type="text"
             onChange={this.handleInputChange}
             value={this.state.height}
             name="height"
